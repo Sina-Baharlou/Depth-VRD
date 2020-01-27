@@ -1,0 +1,15 @@
+numpy
+pillow
+pandas
+torch>=1
+tensorboardX
+torchvision>=0.2.0
+matplotlib
+dill
+h5py
+ipdb
+overrides
+pycocotools
+six
+tqdm
+gdown
