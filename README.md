@@ -121,6 +121,10 @@ The training scripts will be performed for eight different random seeds and 25 e
 You can also separately download the full model (LCVD) [here](https://drive.google.com/open?id=1ZkHseT3zA2bk1CBxJ6fhI18GuqwUIAwM). Please note that this checkpoint generates results that are
 slightly different that the ones reported in our paper. The reason is that for a fair comparison, we have reported the mean values from evaluations over several models.
 
+## Contributors
+
+This repository is created and maintained by [Sahand Sharifzadeh](https://github.com/sharifza), [Sina Moayed Baharlou](https://github.com/Sina-Baharlou), and [Max Berrendorf](https://github.com/mberr)
+
 ## Acknowledgements
 
 The skeleton of our code is built on top of the nicely organized [Neural-Motifs](https://github.com/rowanz/neural-motifs) framework (incl. the rgb data loading pipeline and part of the evaluation code). 
