@@ -130,4 +130,4 @@ This repository is created and maintained by [Sahand Sharifzadeh](https://github
 The skeleton of our code is built on top of the nicely organized [Neural-Motifs](https://github.com/rowanz/neural-motifs) framework (incl. the rgb data loading pipeline and part of the evaluation code). 
 We have upgraded these parts to be compatible with PyTorch 1. To enable a fair comparison of models, our object detection backbone also uses the same Faster-RCNN weights as that work.
 
-<meta name="google-site-verification" content="wbQNxCO1l_WIkjXooE_zSzusUo5Fsf1X3WGxf-XXdgU" />
+
