@@ -1,8 +1,10 @@
 # Improving Visual Relation Detection using Depth Maps
 
-#### by [Sahand Sharifzadeh](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/sharifzadeh/index.html)<sup>1</sup>, [Sina Moayed Baharlou](https://www.sinabaharlou.com)<sup>2</sup>, [Max Berrendorf](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/berrendorf/index.html)<sup>1</sup>, [Rajat Koner](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/koner1/index.html)<sup>1</sup>, [Volker Tresp](https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/index.html)<sup>1,3</sup>
+#### by [Sahand Sharifzadeh](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/sharifzadeh/index.html)<sup>1</sup>, [Sina Moayed Baharlou](https://www.sinabaharlou.com)<sup>2*</sup>, [Max Berrendorf](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/berrendorf/index.html)<sup>1*</sup>, [Rajat Koner](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/koner1/index.html)<sup>1</sup>, [Volker Tresp](https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/index.html)<sup>1,3</sup>
 <sup>1 </sup> Ludwig Maximilian University, Munich, Germany, <sup>2 </sup> Sapienza University of Rome, Italy<br/>
 <sup>3 </sup> Siemens AG, Munich, Germany<br/>
+<sup>* </sup> Equal contribution
+
 ## Abstract
 
 State-of-the-art visual relation detection methods mostly rely on object information extracted from RGB images 
@@ -123,7 +125,7 @@ slightly different that the ones reported in our paper. The reason is that for a
 
 ## Contributors
 
-This repository is created and maintained by [Sahand Sharifzadeh](https://github.com/sharifza), [Sina Moayed Baharlou](https://github.com/Sina-Baharlou), and [Max Berrendorf](https://github.com/mberr)
+This repository is created and maintained by [Sahand Sharifzadeh](https://github.com/sharifza), [Sina Moayed Baharlou](https://github.com/Sina-Baharlou), and [Max Berrendorf](https://github.com/mberr).
 
 ## Acknowledgements
 
