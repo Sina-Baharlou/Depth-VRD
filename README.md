@@ -50,7 +50,7 @@ For further information, please read our paper [here](https://arxiv.org/abs/1905
     primaryClass={cs.CV}
 }
 ```
-## Depth Dataset
+## VG-Depth Dataset
 
 We release a new dataset called VG-Depth as an extension to Visual Genome. This dataset contains synthetically generated depth maps from Visual Genome images and can be downloaded from the following link: [VG-Depth](https://drive.google.com/open?id=1-BQcGwsnwS-cYHSWIAkmToSCINUnNZQh)
 
