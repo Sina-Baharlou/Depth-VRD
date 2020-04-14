@@ -115,7 +115,7 @@ def get_optim(lr):
     # Lower the learning rate on the VGG fully connected layers by 1/10th. It's a hack, but it helps
     # stabilize the models.
 
-    if conf.model.startswith('depth'):
+    if conf.model.startswith('shz_depth'):
         fc_params = [p for n,p in detector.named_parameters()
                      if not is_conv_param_depth(n) and p.requires_grad]
         non_fc_params = [p for n, p in detector.named_parameters()
