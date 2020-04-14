@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Train fusion models using different configurations
 N_SEEDS=8
-N_EPOCHS=25
+N_EPOCHS=30
 BATCH_SIZE=16
 CLIP_GRAD=5
 PREV_ITER=500

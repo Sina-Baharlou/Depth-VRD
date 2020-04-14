@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Train individual models using different configurations
 N_SEEDS=8
-N_EPOCHS=25
-BATCH_SIZE=16
+N_EPOCHS=30
+BATCH_SIZE=32
 CLIP_GRAD=5
 PREV_ITER=500
 GPU_COUNT=1

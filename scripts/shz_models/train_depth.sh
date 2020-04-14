@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Train isolated depth models using different configurations (without fusion layer)
 N_SEEDS=8
-N_EPOCHS=25
+N_EPOCHS=30
 BATCH_SIZE=32
 CLIP_GRAD=5
 PREV_ITER=500
