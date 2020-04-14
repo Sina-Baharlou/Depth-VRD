@@ -1,9 +1,9 @@
-# Improving Visual Relation Detection using Depth Maps
+# [Improving Visual Relation Detection using Depth Maps](https://arxiv.org/abs/1905.00966)
 
-#### by [Sahand Sharifzadeh](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/sharifzadeh/index.html)<sup>1</sup>, [Sina Moayed Baharlou](https://www.sinabaharlou.com)<sup>2*</sup>, [Max Berrendorf](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/berrendorf/index.html)<sup>1*</sup>, [Rajat Koner](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/koner1/index.html)<sup>1</sup>, [Volker Tresp](https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/index.html)<sup>1,3</sup>
+#### by [Sahand Sharifzadeh](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/sharifzadeh/index.html)<sup>1</sup>, [Sina Moayed Baharlou](https://www.sinabaharlou.com)<sup>2</sup>, [Max Berrendorf](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/berrendorf/index.html)<sup>1</sup>, [Rajat Koner](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/koner1/index.html)<sup>1</sup>, [Volker Tresp](https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/index.html)<sup>1,3</sup>
 <sup>1 </sup> Ludwig Maximilian University, Munich, Germany, <sup>2 </sup> Sapienza University of Rome, Italy<br/>
 <sup>3 </sup> Siemens AG, Munich, Germany<br/>
-<sup>* </sup> Equal contribution
+
 
 ## Abstract
 
@@ -33,23 +33,8 @@ model can outperform competing methods by a margin of up to 8\% points, even tho
 * We propose <i>Macro Recall@K</i> as a competitive metric for evaluating the visual relation detection performance in highly imbalanced 
 datasets such as Visual Genome.
 
-## Results
 
-<p align="center"><img src="docs/results.png" width="720" title="The results of our model compared to other works."></p>
 
-## Paper
-For further information, please read our paper [here](https://arxiv.org/abs/1905.00966).
-## Bibtex
-```
-@misc{sah2019improving,
-    title={Improving Visual Relation Detection using Depth Maps},
-    author={Sahand Sharifzadeh and Sina Moayed Baharlou and Max Berrendorf and Rajat Koner and Volker Tresp},
-    year={2019},
-    eprint={1905.00966},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
-}
-```
 ## VG-Depth Dataset
 
 We release a new dataset called VG-Depth as an extension to Visual Genome. This dataset contains synthetically generated depth maps from Visual Genome images and can be downloaded from the following link: [VG-Depth](https://drive.google.com/open?id=1-BQcGwsnwS-cYHSWIAkmToSCINUnNZQh)
@@ -57,6 +42,18 @@ We release a new dataset called VG-Depth as an extension to Visual Genome. This 
 Here are some examples of the Visual Genome images and their corresponding depth maps provided in our dataset:
 
 <p align="center"><img src="docs/fine-images.jpg" width="720" title="Depth Map Samples"></p>
+
+## Results
+<p align="center"><img src="docs/results.png" width="720" title="The results of our model compared to other works."></p>
+
+
+## Qualitative Results
+Some of the qualitative results from our model’s predictions. Green arrows indicate the successfully detected predicates (true positives), orange arrows
+indicate the false negatives and gray arrows indicate predicted links which are not annotated in the ground truth.
+
+<p align="center"><img src="docs/qualitative.svg" title="Some of the qualitative results from our model’s predictions. Green arrows indicate the successfully detected predicates (true positives), orange arrows indicate the false negatives and gray arrows indicate predicted links which are not annotated in the ground truth."></p>
+
+
 
 ## Code
 
@@ -98,26 +95,27 @@ If you have already installed some of the libraries or downloaded the datasets, 
 
 ### How to Run
 
-Update the config.py file to set the datasets paths, and adjust your PYTHONPATH: (e.g. export PYTHONPATH=/home/sina/Depth-VRD).
+Set the dataset path in the config.py file, and adjust your PYTHONPATH (e.g. export PYTHONPATH=/home/sina/Depth-VRD).
 
-To train or evaluate the networks, run the following scripts and select between different models and hyper-parameters by passing the pre-defined arguments:
+To train or evaluate the networks, select the configuration index and run the following scripts:
+(e.g. to evaluate "Ours-v,d" model run ./scripts/shz_models/eval_scripts.sh 7)
  
-* To train the depth models separately (without the fusion layer): 
+* To train the depth model separately (without the fusion layer): 
 ```
-./scripts/shz_models/train_depth.sh 1.1
+./scripts/shz_models/train_depth.sh <configuration index>
 ``` 
-* To train the each modality seperately: 
+* To train each feature separately (e.g. class features): 
 ```
-./scripts/shz_models/train_individual.sh 1.1
+./scripts/shz_models/train_individual.sh <configuration index>
 ``` 
 * To train the fusion models: 
 ```
-./scripts/shz_models/train_fusion.sh 1.1
+./scripts/shz_models/train_fusion.sh <configuration index>
 ``` 
 
 * To evaluate the models: 
 ```
-./scripts/shz_models/eval_scripts.sh 1
+./scripts/shz_models/eval_scripts.sh <configuration index>
 ``` 
 The training scripts will be performed for eight different random seeds and 25 epochs each. 
 
@@ -136,4 +134,14 @@ This repository is created and maintained by [Sahand Sharifzadeh](https://github
 The skeleton of our code is built on top of the nicely organized [Neural-Motifs](https://github.com/rowanz/neural-motifs) framework (incl. the rgb data loading pipeline and part of the evaluation code). 
 We have upgraded these parts to be compatible with PyTorch 1. To enable a fair comparison of models, our object detection backbone also uses the same Faster-RCNN weights as that work.
 
-
+## Bibtex
+```
+@misc{sah2019improving,
+    title={Improving Visual Relation Detection using Depth Maps},
+    author={Sahand Sharifzadeh and Sina Moayed Baharlou and Max Berrendorf and Rajat Koner and Volker Tresp},
+    year={2019},
+    eprint={1905.00966},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```

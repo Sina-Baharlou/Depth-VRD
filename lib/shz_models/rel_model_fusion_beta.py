@@ -1,5 +1,5 @@
 """
-Depth-Fusion relation detection model
+Depth-Fusion relation detection model +  Utilizing UoBB features
 """
 import numpy as np
 import torch

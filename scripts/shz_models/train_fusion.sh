@@ -10,11 +10,11 @@ FRCNN_CKPT="checkpoints/vg-faster-rcnn.tar"
 SAVE_PATH="checkpoints"
 DEPTH_MODEL="resnet18"
 
-# -- *** TRAINING FUSION MODEL (V,D) FROM SCRATCH *** --
+# -- *** TRAIN FUSION MODEL (Ours-v,d) FROM SCRATCH *** --
 if [[ $1 == "1.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (V,D) FROM SCRATCH | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-v,d) FROM SCRATCH | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_vd_s_lr4_seed_${i} \
@@ -24,7 +24,7 @@ if [[ $1 == "1.1" ]]; then
 elif [[ $1 == "1.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (V,D) FROM SCRATCH | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-v,d) FROM SCRATCH | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_vd_s_lr5_seed_${i} \
@@ -34,7 +34,7 @@ elif [[ $1 == "1.2" ]]; then
 elif [[ $1 == "1.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (V,D) FROM SCRATCH | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-v,d) FROM SCRATCH | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_vd_s_lr6_seed_${i} \
@@ -43,11 +43,11 @@ elif [[ $1 == "1.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (V,D) FROZEN*** --
+# -- *** TRAIN FUSION MODEL (Ours-v,d) FROZEN*** --
 elif [[ $1 == "2.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (V,D) FROZEN | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-v,d) FROZEN | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_vd_lr4_seed_${i} \
@@ -58,7 +58,7 @@ elif [[ $1 == "2.1" ]]; then
 elif [[ $1 == "2.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (V,D) FROZEN | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-v,d) FROZEN | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_vd_lr5_seed_${i} \
@@ -69,7 +69,7 @@ elif [[ $1 == "2.2" ]]; then
 elif [[ $1 == "2.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (V,D) FROZEN | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-v,d) FROZEN | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_vd_lr6_seed_${i} \
@@ -79,11 +79,11 @@ elif [[ $1 == "2.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,V,D) FROM SCRATCH *** --
+# -- *** TRAIN FUSION MODEL (Ours-l,v,d) FROM SCRATCH *** --
 elif [[ $1 == "3.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,V,D) FROM SCRATCH | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,v,d) FROM SCRATCH | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lvd_s_lr4_seed_${i} \
@@ -93,7 +93,7 @@ elif [[ $1 == "3.1" ]]; then
 elif [[ $1 == "3.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,V,D) FROM SCRATCH | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,v,d) FROM SCRATCH | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lvd_s_lr5_seed_${i} \
@@ -103,7 +103,7 @@ elif [[ $1 == "3.2" ]]; then
 elif [[ $1 == "3.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,V,D) FROM SCRATCH | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,v,d) FROM SCRATCH | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lvd_s_lr6_seed_${i} \
@@ -112,11 +112,11 @@ elif [[ $1 == "3.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,V,D) FROZEN*** --
+# -- *** TRAIN FUSION MODEL (Ours-l,v,d) FROZEN*** --
 elif [[ $1 == "4.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,V,D) FROZEN | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,v,d) FROZEN | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lvd_lr4_seed_${i} \
@@ -127,7 +127,7 @@ elif [[ $1 == "4.1" ]]; then
 elif [[ $1 == "4.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,V,D) FROZEN | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,v,d) FROZEN | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lvd_lr5_seed_${i} \
@@ -138,7 +138,7 @@ elif [[ $1 == "4.2" ]]; then
 elif [[ $1 == "4.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,V,D) FROZEN | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,v,d) FROZEN | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lvd_lr6_seed_${i} \
@@ -148,11 +148,11 @@ elif [[ $1 == "4.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,C,D) FROM SCRATCH *** --
+# -- *** TRAIN FUSION MODEL (Ours-l,c,d) FROM SCRATCH *** --
 elif [[ $1 == "5.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,D) FROM SCRATCH | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,d) FROM SCRATCH | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcd_s_lr4_seed_${i} \
@@ -162,7 +162,7 @@ elif [[ $1 == "5.1" ]]; then
 elif [[ $1 == "5.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,D) FROM SCRATCH | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,d) FROM SCRATCH | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcd_s_lr5_seed_${i} \
@@ -172,7 +172,7 @@ elif [[ $1 == "5.2" ]]; then
 elif [[ $1 == "5.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,D) FROM SCRATCH | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,d) FROM SCRATCH | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcd_s_lr6_seed_${i} \
@@ -181,11 +181,11 @@ elif [[ $1 == "5.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,C,D) FROZEN*** --
+# -- *** TRAIN FUSION MODEL (Ours-l,c,d) FROZEN*** --
 elif [[ $1 == "6.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,D) FROZEN | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,d) FROZEN | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcd_lr4_seed_${i} \
@@ -196,7 +196,7 @@ elif [[ $1 == "6.1" ]]; then
 elif [[ $1 == "6.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,D) FROZEN | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,d) FROZEN | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcd_lr5_seed_${i} \
@@ -207,7 +207,7 @@ elif [[ $1 == "6.2" ]]; then
 elif [[ $1 == "6.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,D) FROZEN | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,d) FROZEN | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcd_lr6_seed_${i} \
@@ -217,11 +217,11 @@ elif [[ $1 == "6.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,C,V) FROM SCRATCH *** --
+# -- *** TRAIN FUSION MODEL (Ours-l,c,v) FROM SCRATCH *** --
 elif [[ $1 == "7.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V) FROM SCRATCH | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v) FROM SCRATCH | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcv_s_lr4_seed_${i} \
@@ -231,7 +231,7 @@ elif [[ $1 == "7.1" ]]; then
 elif [[ $1 == "7.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V) FROM SCRATCH | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v) FROM SCRATCH | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcv_s_lr5_seed_${i} \
@@ -241,7 +241,7 @@ elif [[ $1 == "7.2" ]]; then
 elif [[ $1 == "7.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V) FROM SCRATCH | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v) FROM SCRATCH | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcv_s_lr6_seed_${i} \
@@ -250,11 +250,11 @@ elif [[ $1 == "7.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,C,V,D) FROM SCRATCH *** --
+# -- *** TRAIN FUSION MODEL (Ours-l,c,v,d) FROM SCRATCH *** --
 elif [[ $1 == "8.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FROM SCRATCH | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FROM SCRATCH | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcvd_s_lr4_seed_${i} \
@@ -264,7 +264,7 @@ elif [[ $1 == "8.1" ]]; then
 elif [[ $1 == "8.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FROM SCRATCH | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FROM SCRATCH | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcvd_s_lr5_seed_${i} \
@@ -274,7 +274,7 @@ elif [[ $1 == "8.2" ]]; then
 elif [[ $1 == "8.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FROM SCRATCH | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FROM SCRATCH | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -ckpt ${FRCNN_CKPT} -save_dir ${SAVE_PATH}/fusion_lcvd_s_lr6_seed_${i} \
@@ -283,11 +283,11 @@ elif [[ $1 == "8.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,C,V,D) FROZEN*** --
+# -- *** TRAIN FUSION MODEL (Ours-l,c,v,d) FROZEN*** --
 elif [[ $1 == "9.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FROZEN | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FROZEN | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_lr4_seed_${i} \
@@ -298,7 +298,7 @@ elif [[ $1 == "9.1" ]]; then
 elif [[ $1 == "9.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FROZEN | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FROZEN | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_lr5_seed_${i} \
@@ -309,7 +309,7 @@ elif [[ $1 == "9.2" ]]; then
 elif [[ $1 == "9.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FROZEN | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FROZEN | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_lr6_seed_${i} \
@@ -319,11 +319,11 @@ elif [[ $1 == "9.3" ]]; then
     done
 
 
-# -- *** TRAINING FUSION MODEL (L,C,V,D) FINETUNE*** --
+# -- *** TRAIN FUSION MODEL (Ours-l,c,v,d) FINETUNE*** --
 elif [[ $1 == "10.1" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FINETUNE | ADAM LR-4 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FINETUNE | ADAM LR-4 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-4 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_ft_lr4_seed_${i} \
@@ -334,7 +334,7 @@ elif [[ $1 == "10.1" ]]; then
 elif [[ $1 == "10.2" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FINETUNE | ADAM LR-5 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FINETUNE | ADAM LR-5 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-5 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_ft_lr5_seed_${i} \
@@ -345,7 +345,7 @@ elif [[ $1 == "10.2" ]]; then
 elif [[ $1 == "10.3" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FINETUNE | ADAM LR-6 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FINETUNE | ADAM LR-6 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-6 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_ft_lr6_seed_${i} \
@@ -356,7 +356,7 @@ elif [[ $1 == "10.3" ]]; then
 elif [[ $1 == "10.4" ]]; then
     for i in $(seq 0 $((N_SEEDS - 1)))
     do
-    echo "TRAINING FUSION MODEL (L,C,V,D) FINETUNE | ADAM LR-7 | SEED: $i"
+    echo "TRAINING FUSION MODEL (Ours-l,c,v,d) FINETUNE | ADAM LR-7 | SEED: $i"
     python models/train_rels.py -m predcls -model shz_fusion -hidden_dim 4096 \
         -b ${BATCH_SIZE} -nepoch ${N_EPOCHS} -adam -lr 1e-7 -clip ${CLIP_GRAD} \
         -save_dir ${SAVE_PATH}/fusion_lcvd_ft_lr7_seed_${i} \
