@@ -4,6 +4,7 @@
 <sup>1 </sup> Ludwig Maximilian University, Munich, Germany, <sup>2 </sup> Sapienza University of Rome, Italy<br/>
 <sup>3 </sup> Siemens AG, Munich, Germany<br/>
 
+<p align="center"><img src="docs/demo.jpg" title="Improving Visual Relation Detection using Depth Maps"></p>
 
 ## Abstract
 State-of-the-art visual relation detection methods mostly rely on object information extracted from RGB images
@@ -48,7 +49,7 @@ Here are some examples of the Visual Genome images and their corresponding depth
 Some of the qualitative results from our model’s predictions. Green arrows indicate the successfully detected predicates (true positives), orange arrows
 indicate the false negatives and gray arrows indicate predicted links which are not annotated in the ground truth.
 
-<p align="center"><img src="docs/qualitative.png" title="Some of the qualitative results from our model’s predictions. Green arrows indicate the successfully detected predicates (true positives), orange arrows indicate the false negatives and gray arrows indicate predicted links which are not annotated in the ground truth."></p>
+<p align="center"><img src="docs/qualitative.jpg" title="Some of the qualitative results from our model’s predictions. Green arrows indicate the successfully detected predicates (true positives), orange arrows indicate the false negatives and gray arrows indicate predicted links which are not annotated in the ground truth."></p>
 
 
 
