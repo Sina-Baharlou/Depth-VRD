@@ -4,8 +4,6 @@
 <sup>1 </sup> Ludwig Maximilian University, Munich, Germany, <sup>2 </sup> Sapienza University of Rome, Italy<br/>
 <sup>3 </sup> Siemens AG, Munich, Germany<br/>
 
-<p align="center"><img src="docs/demo.jpg" title="Improving Visual Relation Detection using Depth Maps"></p>
-
 ## Abstract
 State-of-the-art visual relation detection methods mostly rely on object information extracted from RGB images
 such as 2D bounding boxes, feature maps, and predicted class probabilities. Depth maps can additionally provide
