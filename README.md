@@ -1,4 +1,4 @@
-# [Improving Visual Relation Detection using Depth Maps](https://arxiv.org/abs/1905.00966)
+## [Improving Visual Relation Detection using Depth Maps (ICPR 2020)](https://arxiv.org/abs/1905.00966)
 
 #### by [Sahand Sharifzadeh](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/sharifzadeh/index.html)<sup>1</sup>, [Sina Moayed Baharlou](https://www.sinabaharlou.com)<sup>2</sup>, [Max Berrendorf](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/berrendorf/index.html)<sup>1</sup>, [Rajat Koner](https://www.dbs.ifi.lmu.de/cms/personen/mitarbeiter/koner1/index.html)<sup>1</sup>, [Volker Tresp](https://www.dbs.ifi.lmu.de/cms/personen/professoren/tresp/index.html)<sup>1,3</sup>
 <sup>1 </sup> Ludwig Maximilian University, Munich, Germany, <sup>2 </sup> Sapienza University of Rome, Italy<br/>
@@ -54,7 +54,7 @@ indicate the false negatives and gray arrows indicate predicted links which are 
 ## Code
 
 ### Requirements
-The main requirements of the provided code are as follows:
+The main requirements of our code are as follows:
 
 >- Python >= 3.6 </br>
 >- PyTorch >= 1.1
@@ -75,7 +75,7 @@ Please make sure you have Cuda Toolkit 10.0 installed, then you can setup the en
 This script will perform the following operations:
 
 1. Install the required libraries.
-2. Download the Visual-Genome dataset.
+2. Download Visual-Genome.
 3. Download the Depth version of VG.
 4. Download the necessary checkpoints.
 5. Compile the CUDA libraries.
