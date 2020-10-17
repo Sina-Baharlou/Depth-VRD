@@ -5,17 +5,17 @@
 <sup>3 </sup> Siemens AG, Munich, Germany<br/>
 
 ## Abstract
-State-of-the-art visual relation detection methods mostly rely on object information extracted from RGB images
-such as 2D bounding boxes, feature maps, and predicted class probabilities. Depth maps can additionally provide
-valuable information on object relations, e.g. helping to detect not only spatial relations, such as standing behind,
-but also non-spatial relations, such as holding. In this work, we study the effect of using different object
-information with a focus on depth maps. To enable this study, we release a new synthetic dataset of depth maps,
-VG-Depth, as an extension to Visual Genome (VG). We also note that given the highly imbalanced distribution of 
-relations in VG, typical evaluation metrics for visual relation detection cannot reveal improvements of 
-under-represented relations. To address this problem, we propose using an additional metric, calling it Macro Recall@K,
-and demonstrate its remarkable performance on VG. Finally, our experiments confirm that by effective utilization of 
-depth maps within a simple, yet competitive framework, the performance of visual relation detection can be improved 
-by a margin of up to 8\%.
+Visual relation detection methods rely on object information extracted from RGB images such as 2D bounding boxes,
+feature maps, and predicted class probabilities. We argue that depth maps can additionally provide valuable information
+on object relations, e.g. helping to detect not only spatial relations, such as standing behind, but also non-spatial 
+relations, such as holding. In this work, we study the effect of using different object features with a focus on depth maps.
+To enable this study, we release a new synthetic dataset of depth maps, VG-Depth, as an extension to Visual Genome (VG).
+We also note that given the highly imbalanced distribution of relations in VG, typical evaluation metrics for visual relation
+detection cannot reveal improvements of under-represented relations. To address this problem, we propose using an additional 
+metric, calling it Macro Recall@K, and demonstrate its remarkable performance on VG. Finally, our experiments confirm that by
+effective utilization of depth maps within a simple, yet competitive framework, the performance of visual relation detection
+can be improved by a margin of up to 8\%. 
+
 ## Model
 
 <p align="center"><img src="docs/architecture.png" width="720" title="The proposed architecture"></p>
