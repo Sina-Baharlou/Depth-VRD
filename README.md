@@ -56,7 +56,7 @@ indicate the false negatives and gray arrows indicate predicted links which are 
 ### Requirements
 The main requirements of our code are as follows:
 
->- Python >= 3.6 </br>
+>- Python >= 3.6 (for Python 3.7 please check "Python3.7-beta" branch)</br>
 >- PyTorch >= 1.1
 >- TorchVision >= 0.2.0 
 >- TensorboardX
