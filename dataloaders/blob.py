@@ -159,7 +159,7 @@ class Blob(object):
     def _scatter(self, x, chunk_sizes, dim=0):
         """ Helper function"""
         if self.num_gpus == 1:
-            return x.cuda(self.primary_gpu, async=True)
+            return x.cuda(self.primary_gpu, non_blocking=True)
         return torch.nn.parallel.scatter_gather.Scatter.apply(
             list(range(self.num_gpus)), chunk_sizes, dim, x)
 
@@ -168,8 +168,8 @@ class Blob(object):
         self.imgs = self._scatter(self.imgs, [self.batch_size_per_gpu] * self.num_gpus)
 
         # -- These variables are not used anywhere else!
-        self.gt_classes_primary = self.gt_classes.cuda(self.primary_gpu, async=True)
-        self.gt_boxes_primary = self.gt_boxes.cuda(self.primary_gpu, async=True)
+        self.gt_classes_primary = self.gt_classes.cuda(self.primary_gpu, non_blocking=True)
+        self.gt_boxes_primary = self.gt_boxes.cuda(self.primary_gpu, non_blocking=True)
 
         # Predcls might need these
         self.gt_classes = self._scatter(self.gt_classes, self.gt_box_chunks)
@@ -183,14 +183,14 @@ class Blob(object):
 
             self.train_anchor_inds = self._scatter(self.train_anchor_inds,
                                                    self.train_chunks)
-            self.train_anchor_labels = self.train_anchor_labels.cuda(self.primary_gpu, async=True)
-            self.train_anchors = self.train_anchors.cuda(self.primary_gpu, async=True)
+            self.train_anchor_labels = self.train_anchor_labels.cuda(self.primary_gpu, non_blocking=True)
+            self.train_anchors = self.train_anchors.cuda(self.primary_gpu, non_blocking=True)
 
             if self.is_rel:
                 self.gt_rels = self._scatter(self.gt_rels, self.gt_rel_chunks)
         else:
             if self.is_rel:
-                self.gt_rels = self.gt_rels.cuda(self.primary_gpu, async=True)
+                self.gt_rels = self.gt_rels.cuda(self.primary_gpu, non_blocking=True)
 
         if self.proposal_chunks is not None:
             self.proposals = self._scatter(self.proposals, self.proposal_chunks)
