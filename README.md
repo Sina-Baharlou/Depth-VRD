@@ -132,12 +132,14 @@ We have upgraded these parts to be compatible with PyTorch 1. To enable a fair c
 
 ## Bibtex
 ```
-@misc{sah2019improving,
-    title={Improving Visual Relation Detection using Depth Maps},
-    author={Sahand Sharifzadeh and Sina Moayed Baharlou and Max Berrendorf and Rajat Koner and Volker Tresp},
-    year={2019},
-    eprint={1905.00966},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@INPROCEEDINGS{9412945,
+  author={Sharifzadeh, Sahand and Baharlou, Sina Moayed and Berrendorf, Max and Koner, Rajat and Tresp, Volker},
+  booktitle={2020 25th International Conference on Pattern Recognition (ICPR)},
+  title={Improving Visual Relation Detection using Depth Maps},
+  year={2021},
+  volume={},
+  number={},
+  pages={3597-3604},
+  doi={10.1109/ICPR48806.2021.9412945}
 }
 ```
