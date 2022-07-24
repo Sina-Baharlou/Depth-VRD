@@ -33,7 +33,8 @@ datasets such as Visual Genome.
 
 ## VG-Depth Dataset
 
-We release a new dataset called VG-Depth as an extension to Visual Genome. This dataset contains synthetically generated depth maps from Visual Genome images and can be downloaded from the following link: [VG-Depth](https://drive.google.com/open?id=1-BQcGwsnwS-cYHSWIAkmToSCINUnNZQh)
+We release a new dataset called VG-Depth as an extension to Visual Genome. This dataset contains synthetically generated depth maps from Visual Genome images and can be downloaded from the following link: [VG-Depth](https://drive.google.com/open?id=1-BQcGwsnwS-cYHSWIAkmToSCINUnNZQh).</br>
+Please visit [VisualGenome-to-Depth](https://github.com/Sina-Baharlou/VisualGenome-to-Depth) repository if you would like to generate the depth images yourself. 
 
 Here are some examples of the Visual Genome images and their corresponding depth maps provided in our dataset:
 
